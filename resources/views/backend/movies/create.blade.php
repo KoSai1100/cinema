@@ -7,14 +7,17 @@
                 <h2 class="card-title">Entry Movie Info</h2>
                 <form action="{{route('movie.store')}}" class="forms-sample" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="exampleSelectGender">Choose cinema</label>
-                          <select class="form-control" id="exampleSelectGender" name="cinema_id">
-                           @foreach ($cinemas as $item)
-                           <option value="{{$item->id}}"> {{$item->location}} </option>
-                           @endforeach
-                          </select>
-                    </div>
+
+                        <select class="form-control" id="exampleSelectGender" name="cinema_id">
+                            @foreach ($cinemas as $item)
+                                <option value="{{ $item->id }}">{{ $item->location }}</option>
+                            @endforeach
+                        </select>
+
+
+                    </div> --}}
                   <div class="form-group">
                     <label for="exampleInputName1">Movie name</label>
                     <input type="text" name="name" class="form-control" id="exampleInputName1" >
@@ -29,14 +32,19 @@
                     <input type="text" name="director" class="form-control" id="exampleInputEmail3" >
                   </div>
 
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Description</label>
+                    <textarea name="description" id="" cols="30" rows="10"></textarea>
+                </div>
+
                   <div class="form-group">
-                    <label for="exampleInputEmail3">Start date</label>
-                    <input type="date" name="start_date" class="form-control" id="exampleInputEmail3" >
+                    <label for="exampleInputEmail3">Duration(mins)</label>
+                    <input type="number" name="duration" class="form-control" id="exampleInputEmail3" >
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputEmail3">End date</label>
-                    <input type="date" name="end_date" class="form-control" id="exampleInputEmail3" >
+                    <label for="exampleInputEmail3">Release Date</label>
+                    <input type="date" name="release_date" class="form-control" id="exampleInputEmail3" >
                   </div>
 
                   <div class="form-group">

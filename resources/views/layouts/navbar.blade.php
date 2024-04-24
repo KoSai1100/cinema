@@ -3,16 +3,16 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="/dashboard">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
                     </li>
 
-                    <li class="nav-item {{ request()->routeIs('cinema.create') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('cinema.create') }}">
+                    <li class="nav-item {{ request()->routeIs('cinema_building.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('cinema_building.index') }}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Cinema</span>
+              <span class="menu-title">Cinema Building</span>
             </a>
                     </li>
 
@@ -23,6 +23,34 @@
                     </a>
             </li>
 
+            <li class="nav-item {{ request()->routeIs('showtimes.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('showtimes.index') }}">
+            <i class="icon-grid menu-icon"></i>
+            <span class="menu-title">Show time</span>
+                </a>
+        </li>
+
+        <li class="nav-item {{ request()->routeIs('booking.index') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('booking.index') }}">
+        <i class="icon-grid menu-icon"></i>
+        <span class="menu-title">Booking list</span>
+            </a>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('staff.index') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('staff.index') }}">
+    <i class="icon-grid menu-icon"></i>
+    <span class="menu-title">Staff list</span>
+        </a>
+</li>
+
+<form method="POST" action="{{ route('admin.logout') }}">
+    @csrf
+    <button class="add btn btn-primary todo-list-add-btn" type="submit">Logout
+    </button>
+</form>
+
+{{--
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
@@ -90,8 +118,8 @@
               <i class="icon-head menu-icon"></i>
               <span class="menu-title">User Pages</span>
               <i class="menu-arrow"></i>
-            </a>
-                        <div class="collapse" id="auth">
+            </a> --}}
+                        {{-- <div class="collapse" id="auth">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
@@ -116,7 +144,7 @@
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Documentation</span>
             </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
             <!-- partial -->

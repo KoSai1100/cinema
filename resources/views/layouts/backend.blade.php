@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Skydash Admin</title>
+    <title>NashVista </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/ti-icons/css/themify-icons.css') }}">
@@ -34,7 +34,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset ('assets/images/logo.svg') }}" class="mr-2" alt="logo"/></a>
+                <a class="navbar-brand brand-logo mr-5" href="index.html">NashVista</a>
                 <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset ('assets/images/logo-mini.svg') }}" alt="logo"/></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -151,7 +151,7 @@
                     </div>
                 </div>
             </div>
-            <div id="right-sidebar" class="settings-panel">
+            {{-- <div id="right-sidebar" class="settings-panel">
                 <i class="settings-close ti-close"></i>
                 <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
                     <li class="nav-item">
@@ -300,7 +300,7 @@
                     </div>
                     <!-- chat tab ends -->
                 </div>
-            </div>
+            </div> --}}
 
 
             @include('layouts.navbar')

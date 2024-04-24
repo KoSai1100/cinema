@@ -16,11 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->text('cast');
             $table->string('director');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->text('description');
+            $table->integer('duration');
+            $table->date('release_date');
             $table->string('image');
-            $table->unsignedBigInteger('cinema_id');
-            $table->foreign('cinema_id')->references('id')->on('cinema');
             $table->timestamps();
         });
     }

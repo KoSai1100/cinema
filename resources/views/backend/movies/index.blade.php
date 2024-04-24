@@ -22,9 +22,9 @@
                           <th>ID #</th>
                           <th>Movie</th>
                           <th>Name</th>
-                          <th>Cinema</th>
-                          <th>Start Date</th>
-                          <th>End Date</th>
+                          <th>Duration</th>
+                          <th>Director</th>
+                          <th>Release Date</th>
                       </tr>
                     </thead>
 
@@ -40,11 +40,11 @@
                             <td>{{ $movie->name }}</td>
 
                             <td>
-                                {{ $movie->location ?? 'Location Not Available' }}
+                                {{ $movie->duration }}
                             </td>
 
-                            <td>{{ $movie->cast }}</td>
                             <td>{{ $movie->director }}</td>
+                            <td>{{ $movie->release_date }}</td>
                             <td>
                                 <a href="{{ route('movie.edit', $movie->id) }}" class="btn btn-outline-primary">View</a>
                             </td>

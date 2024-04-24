@@ -125,7 +125,19 @@
         <!-- partial --> --}}
 
         <x-backend-layout>
+            {{-- @auth('staff')
+            @if(auth()->guard('staff')->Empty())
+            <script>window.location = "{{ route('admin.login') }}";</script>
 
+            @else --}}
+
+            {{-- @auth('staff')
+            @if(!auth()->guard('staff')->check())
+                <script>window.location = "/admin/login";</script>
+            @endif
+        @else --}}
+            <!-- Handle case where no staff user is authenticated -->
+        <!-- Display something else for non-authenticated users -->
             <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="ti-settings"></i></div>
                 <div id="theme-settings" class="settings-panel">
@@ -326,7 +338,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
+                        {{-- <div class="col-md-6 grid-margin stretch-card">
                             <div class="card tale-bg">
                                 <div class="card-people mt-auto">
                                     <img src="images/dashboard/people.svg" alt="people">
@@ -343,7 +355,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 grid-margin transparent">
                             <div class="row">
                                 <div class="col-md-6 mb-4 stretch-card transparent">
@@ -388,7 +400,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
+                        {{-- <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title">Order Details</p>
@@ -414,7 +426,7 @@
                                     <canvas id="order-chart"></canvas>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -633,7 +645,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-7 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -771,8 +783,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
+                    </div> --}}
+                    {{-- <div class="row">
                         <div class="col-md-4 stretch-card grid-margin">
                             <div class="card">
                                 <div class="card-body">
@@ -996,8 +1008,10 @@
 
 
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
+                {{-- @endauth --}}
         </x-backend-layout>
+

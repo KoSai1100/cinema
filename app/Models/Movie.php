@@ -9,11 +9,12 @@ class Movie extends Model
 {
     use HasFactory;
 
-    protected $fillable =['name','cast','director','image','start_date','end_date','cinema_id'];
+    protected $fillable =['name','cast','director','description','duration','image','release_date'];
     protected $table='movie';
 
-    public function cinemas()
+    public function showtimes()
     {
-        return $this->belongsToMany(Cinema::class);
+        return $this->hasMany(Showtime::class);
     }
+
 }
