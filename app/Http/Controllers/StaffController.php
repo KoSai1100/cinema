@@ -38,7 +38,7 @@ class StaffController extends Controller
         ]);
         if($request->hasFile('photo'))
         {
-            $imageName = $request->image->getClientOriginalName();
+            $imageName = $request->photo->getClientOriginalName();
         $request->photo->move(public_path('staffs'), $imageName);
 
 

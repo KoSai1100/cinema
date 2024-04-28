@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('showtime_id');
-            $table->string('seats'); // Changed from seatnumber to seats
+            $table->string('seatnumber'); // Changed from seatnumber to seats
             $table->string('totalprice');
+            $table->string('promocode');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users'); // Changed from user to users
+            $table->foreign('user_id')->references('id')->on('user'); // Changed from user to users
             $table->foreign('showtime_id')->references('id')->on('showtimes'); // Adjust according to your actual table name
         });
     }

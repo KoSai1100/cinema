@@ -447,7 +447,7 @@
                                 <div class="card-body">
                                     <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
                                         <div class="carousel-inner">
-                                            <div class="carousel-item active">
+                                            {{-- <div class="carousel-item active">
                                                 <div class="row">
                                                     <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                                                         <div class="ml-xl-4 mt-3">
@@ -630,7 +630,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

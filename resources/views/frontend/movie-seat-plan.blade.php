@@ -41,10 +41,10 @@
     </div>
 
 
-                <div class="item">
+                {{-- <div class="item">
                     <h5 class="title">05:00</h5>
                     <p>Mins Left</p>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

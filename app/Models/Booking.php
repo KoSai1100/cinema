@@ -9,7 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $fillable=['user_id','showtime_id','seatnumber','totalprice'];
+    protected $fillable=['user_id','showtime_id','seatnumber','totalprice','promocode'];
     protected $table='booking';
 
     public function showtime()

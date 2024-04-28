@@ -13,6 +13,8 @@ use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
+use Stringable;
 
 class IndexController extends Controller
 {
@@ -91,6 +93,7 @@ class IndexController extends Controller
 public function checkSeatAvailability(Request $request)
 {
     // Retrieve data from the request
+    // dd($request->all());
     Log::debug($request->all());
     $movieId = $request->input('movieId');
     $showtimeId = $request->input('showtime_id');
@@ -145,10 +148,11 @@ public function showCheckout(Request $request)
     $cinemaBuilding = session('cinemaBuilding');
     $totalprice=session('totalprice');
 
+    $promocode =Str::random(6);
     // dd($movie,$showtime,$cinemaBuilding,$totalprice);
     // dd($totalprice);
     // Render the checkout page with the retrieved data
-    return view('frontend.movie-checkout', compact('movie', 'selectedSeats', 'showtime', 'cinemaBuilding','totalprice'));
+    return view('frontend.movie-checkout', compact('movie', 'selectedSeats', 'showtime', 'cinemaBuilding','totalprice','promocode'));
 }
 
 public function bookSeats(Request $request)
@@ -158,6 +162,7 @@ public function bookSeats(Request $request)
     if (auth()->check()) {
         // If the user is authenticated, retrieve the user ID
         $userId = auth()->user()->id;
+        Log::debug($userId);
     } else {
         // If the user is not authenticated, register the user
         $user = new User();
@@ -175,14 +180,16 @@ public function bookSeats(Request $request)
     $showtimeId = $request->input('showtime_id');
     $selectedSeats = $request->input('seats');
     $totalPrice = $request->input('totalprice');
+    $promocode=$request->input('promocode');
 
-    Log::debug($showtimeId);
+    // Log::debug('promocode',$promocode);
     // Store booking details in the database
     $booking = new Booking();
     $booking->user_id = $userId;
     $booking->showtime_id = $showtimeId;
     $booking->seatnumber = $selectedSeats;
     $booking->totalprice = $totalPrice;
+    $booking->promocode=$promocode;
     $booking->save();
 
     // Optionally, you can clear the session data if needed

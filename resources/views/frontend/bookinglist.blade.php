@@ -36,6 +36,8 @@
                             <th class="text-white">Showtime</th>
                             <th class="text-white">Seat Number</th>
                             <th class="text-white">Total Price</th>
+                            <th class="text-white">Promocode</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +50,8 @@
                                 <td class="text-white">{{ $booking->showtime->start_time }}</td>
                                 <td class="text-white">{{ implode(', ', explode(',', $booking->seatnumber)) }}</td>
                                 <td class="text-white">{{ $booking->totalprice }}</td>
+                                <td class="text-white">{{ $booking->promocode }}</td>
+
                                 <td>
                                     <form action="{{ route('booking.destroy', $booking->id) }}" method="post">
                                         @csrf

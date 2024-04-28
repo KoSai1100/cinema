@@ -74,11 +74,11 @@
                         <h5 class="title">Promo Code </h5>
                         <form class="checkout-contact-form">
                             <div class="form-group">
-                                <input type="text" placeholder="Please enter promo code">
+                                <input type="text" id="promocode" placeholder="Please enter promo code" value="{{ $promocode }}" readonly>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <input type="submit" value="Verify" class="custom-button">
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                     {{-- <div class="checkout-widget checkout-card mb-0">
@@ -199,7 +199,7 @@
                 console.log("button clicked");
                 var seat = $(".seat").text().trim(); // Get the chosen seat numbers
                 var showtimeId = $("#showtime_id").val(); // Retrieve the showtime_id value
-
+                var promocode=$("#promocode").val();
                 var totalprice = $("#totalprice").text().trim(); // Get total price
                 // var name = $("input[name='name']").val(); // Get user's name
                 // var email = $("input[name='email']").val(); // Get user's email
@@ -207,7 +207,7 @@
 
                 console.log('Seat:', seat);
                 console.log('Showtime:' ,showtimeId);
-
+                console.log('Promorcode',promocode);
                 console.log('Totalprice:',totalprice);
                 // console.log('Name',name);
                 // console.log('email:',email);
@@ -223,7 +223,7 @@
                         showtime_id: showtimeId,
                         seats: seat,
                         totalprice: totalprice,
-
+                        promocode: promocode,
                     },
                     success: function(response) {
                         console.log("Server response:", response); // Log server response for debugging
